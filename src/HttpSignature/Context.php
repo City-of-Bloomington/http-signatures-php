@@ -5,7 +5,7 @@
  */
 declare (strict_types=1);
 
-namespace HttpSignature;
+namespace COB\HttpSignature;
 use Psr\Http\Message\RequestInterface;
 
 class Context

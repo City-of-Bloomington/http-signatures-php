@@ -5,7 +5,7 @@
  */
 declare (strict_types=1);
 
-use HttpSignature\Context;
+use COB\HttpSignature\Context;
 use PHPUnit\Framework\TestCase;
 use GuzzleHttp\Psr7;
 
