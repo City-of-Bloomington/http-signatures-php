@@ -69,7 +69,7 @@ class Context
     {
         if (substr($algorithm, 0, 4) == 'hmac') {
             $algo = substr($algorithm, 5);
-            return base64_encode(hash_hmac($algo, $stringToSign, $secret));
+            return base64_encode(hash_hmac($algo, $stringToSign, $secret, true));
         }
 
         throw new \Exception('unsupportedAlgorithm');
