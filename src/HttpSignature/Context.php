@@ -45,13 +45,13 @@ class Context
             'signature' => $hash
         ]);
         return $request->withHeader('Signature', $signature)
-                       ->withHeader('Authorization', "Signature: $signature");
+                       ->withHeader('Authorization', "Signature $signature");
     }
 
     public function verify(RequestInterface $request): bool
     {
         if ($request->hasHeader('Authorization')) {
-            $signature    = substr($request->getHeader('Authorization')[0], 11);
+            $signature    = substr($request->getHeader('Authorization')[0], 10);
             $params       = self::parseSignatureParameters($signature);
             $special      = ['(request-target)' => strtolower($request->getMethod()).' '.$request->getRequestTarget(),
                              '(created)'        => $params['created']];
